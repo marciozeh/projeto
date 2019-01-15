@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('graduacao');
             $table->string('nomeGuerra');
             $table->string('secao');
-            $table->string('idtMil')->unique();
-            $table->string('cpf')->unique();
-            $table->string('rg');
+            $table->float('idtMil')->unique();
+            $table->float('cpf')->unique();
+            $table->float('rg');
             $table->string('dataNasc');
             $table->string('dataPraca');
             $table->string('escolaridade');
