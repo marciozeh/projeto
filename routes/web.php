@@ -12,5 +12,23 @@
 */
 
 Route::get('/', function () {
+
+//    $users = \DB::table('users')
+//        ->get();
+//    $users = \App\User::all();
+//    dd($users);
+
+
+
     return view('welcome');
 });
+
+//users
+//Route::get('/users', "UserController@index");
+//
+//Route::get('/users/{id}', "UserController@show");
+//
+//Route::post('/users', 'UserController@save');
+
+
+Route::resource('/users', 'UserController');
