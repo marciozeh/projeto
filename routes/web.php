@@ -32,3 +32,10 @@ Route::get('/', function () {
 
 
 Route::resource('/users', 'UserController');
+
+
+Route::prefix('users')->group(function(){
+
+    //problema em usar o resource com o id
+
+    });
