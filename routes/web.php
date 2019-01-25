@@ -12,14 +12,10 @@
 */
 
 Route::get('/', function () {
-
 //    $users = \DB::table('users')
 //        ->get();
 //    $users = \App\User::all();
 //    dd($users);
-
-
-
     return view('welcome');
 });
 
@@ -30,8 +26,9 @@ Route::get('/', function () {
 //
 //Route::post('/users', 'UserController@save');
 
+Route::view('/view', 'view', ['name' => 'teste'])->middleware('test');
 
-Route::resource('/users', 'UserController');
+Route::resource('/users', 'UserController')->middleware('test');
 
 
 Route::prefix('users')->group(function(){
@@ -39,3 +36,6 @@ Route::prefix('users')->group(function(){
     //problema em usar o resource com o id
 
     });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
