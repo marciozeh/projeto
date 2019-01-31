@@ -26,14 +26,19 @@ Route::get('/', function () {
 //
 //Route::post('/users', 'UserController@save');
 
-Route::view('/view', 'view', ['name' => 'teste'])->middleware('test');
+//Route::view('/view', 'view', ['name' => 'teste'])->middleware('test');
 
-Route::resource('/users', 'UserController')->middleware('test');
+//Route::resource('/users', 'UserController')->middleware('test');
 
 
-Route::prefix('users')->group(function(){
+Route::prefix('admin')->group(function(){
 
-    //problema em usar o resource com o id
+    Route::get('users', 'Admin\\UserController@index')->name('user.index');
+    Route::get('users/new', 'Admin\\UserController@new')->name('user.new');
+    Route::post('users/store', 'Admin\\UserController@store')->name('user.store');
+    Route::get('users/edit/{user}', 'Admin\\UserController@edit')->name('user.edit');
+    Route::post('users/update/{id}', 'Admin\\UserController@update')->name('user.update');
+    Route::post('users/remove/{id}', 'Admin\\UserController@delete')->name('user.remove');
 
     });
 Auth::routes();
