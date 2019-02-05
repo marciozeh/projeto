@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -20,11 +21,10 @@ class UserController extends Controller
         return view('admin.users.store');
     }
 
-    public function store(Request $request){
+    public function store(UserRequest $request){
 
         $userData = $request->all();
 
-        dd($userData);
         $request->validate();
 
         $user = new User();
@@ -35,9 +35,11 @@ class UserController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update(Request $request, $id){
+    public function update(UserRequest $request, $id){
 
         $userData = $request->all();
+
+        $request->validate();
 
         $user = User::findOrFail($id);
 

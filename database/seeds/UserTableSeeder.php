@@ -12,7 +12,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         //inserção de dados
-//        $user = new \App\User();
+//        $user = new \App\UserRequest();
 //        $user->creater([
 //            'name' => 'teste'
 //        ]);

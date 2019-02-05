@@ -1,3 +1,7 @@
+<h1>Usuários</h1>
+
+<a href="{{route('user.new')}}">Novo</a>
+
 <table>
     <thead>
     <tr>

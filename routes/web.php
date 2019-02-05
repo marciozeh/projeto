@@ -14,7 +14,7 @@
 Route::get('/', function () {
 //    $users = \DB::table('users')
 //        ->get();
-//    $users = \App\User::all();
+//    $users = \App\UserRequest::all();
 //    dd($users);
     return view('welcome');
 });
